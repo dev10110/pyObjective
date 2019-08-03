@@ -3,6 +3,12 @@
 LICENSE
 README.md
 setup.py
+dist/pyObjective-0.0.1-py3-none-any.whl
+dist/pyObjective-0.0.1.tar.gz
+docs/Makefile
+docs/make.bat
+docs/source/conf.py
+docs/source/index.rst
 pyObjective/__init__.py
 pyObjective.egg-info/PKG-INFO
 pyObjective.egg-info/SOURCES.txt
