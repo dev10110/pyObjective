@@ -66,6 +66,7 @@ class Variable:
                 'Check for typos.')
 
 
+
 class Model:
 
     def __init__(self):

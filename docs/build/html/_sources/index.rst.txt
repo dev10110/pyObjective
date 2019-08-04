@@ -14,8 +14,6 @@ pyObjective is a python package to complement scipy's optimize toolbox.
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
-
    
 
 Usage

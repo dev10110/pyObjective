@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyObjective package &mdash; pyObjective 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pyObjective
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">pyObjective package</a><ul>
+<li><a class="reference internal" href="#module-pyObjective">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyObjective</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>pyObjective package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/pyObjective.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyobjective-package">
+<h1>pyObjective package<a class="headerlink" href="#pyobjective-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-pyObjective">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyObjective" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyObjective.Model">
+<em class="property">class </em><code class="sig-prename descclassname">pyObjective.</code><code class="sig-name descname">Model</code><a class="headerlink" href="#pyObjective.Model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="pyObjective.Model.add_var">
+<code class="sig-name descname">add_var</code><span class="sig-paren">(</span><em class="sig-param">var</em><span class="sig-paren">)</span><a class="headerlink" href="#pyObjective.Model.add_var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a variable to the model. Also updates indices and variable lists.
+:param var: Variable to be added
+:type var: Variable</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyObjective.Model.display_results">
+<code class="sig-name descname">display_results</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyObjective.Model.display_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple method to display the cost and the variables neatly.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyObjective.Model.evaluate">
+<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param">vec</em><span class="sig-paren">)</span><a class="headerlink" href="#pyObjective.Model.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates the cost for the model for a given vector.
+:param vec: vector of variable values
+:type vec: ndarray, list of floats</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>cost evaluated for this vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyObjective.Model.solve">
+<code class="sig-name descname">solve</code><span class="sig-paren">(</span><em class="sig-param">solveOptions={}</em><span class="sig-paren">)</span><a class="headerlink" href="#pyObjective.Model.solve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solves the model. Uses scipy’s dual_annealing method to efficiently find global optimal.
+In the future, I will try to make it generic enough to use a solver of your choice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>solveOptions</strong> (<em>dict</em>) – dictionary of all additional parameters that can be provided to scipy.optimize.dual_annealing()</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>result dictionary as returned by Scipy
+Also stores the solution within the model object (accessible by model.solution and model.solution_vector)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>OptimizeResult</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyObjective.Variable">
+<em class="property">class </em><code class="sig-prename descclassname">pyObjective.</code><code class="sig-name descname">Variable</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">value</em>, <em class="sig-param">bounds</em>, <em class="sig-param">description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyObjective.Variable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Devansh Agrawal
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
