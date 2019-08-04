@@ -93,14 +93,18 @@ class Model:
         self.vars.append(var)
         self.bounds.append(var.bounds)
 
-    def solve(self, solveOptions={}):
+    def solve(self, objective=None, solveOptions={}):
         """
         Solves the model. Uses scipy's dual_annealing method to efficiently find global optimal.
         In the future, I will try to make it generic enough to use a solver of your choice.
 
         Parameters
         ----------
-        solveOptions: dict
+        objective: method, optional
+            Allows user to define the objective function when the solve method is called.
+            Replaces internal self.objective method.
+
+        solveOptions: dict, optional
             dictionary of all additional parameters that can be provided to scipy.optimize.dual_annealing()
 
         Returns
@@ -110,6 +114,9 @@ class Model:
             Also stores the solution within the model object (accessible by model.solution and model.solution_vector)
 
         """
+        if objective is not None:
+            self.objective = objective
+
         res = dual_annealing(self.evaluate, self.bounds, **solveOptions)
 
         for v in self.vars:
