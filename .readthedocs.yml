@@ -7,8 +7,12 @@ sphinx:
 formats: all
 
 python:
-  version: 3.7
-  pip_install: true
-  use_system_site_packages: true
-  install:
-    - requirements: docs/requirements.txt
+   version: 3.7
+   install:
+     - requirements: docs/requirements.txt
+      - method: pip
+        path: .
+        extra_requirements:
+           - docs
+      - method: setuptools
+        path: package
