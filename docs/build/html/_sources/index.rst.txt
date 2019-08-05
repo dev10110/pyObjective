@@ -34,6 +34,11 @@ From there the variable is added to the model, and the model's solve method is c
 
 The simplest possible example is below, but more in-depth examples are available on the left.
 
+.. image:: https://readthedocs.org/projects/pyobjective/badge/?version=latest
+   :target: https://pyobjective.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+
 Quick Start
 ===========
 
@@ -60,7 +65,7 @@ The next few steps include:
 * adding linear and non-linear constraints
 * support for units
 * create model instances with variables fully defined, so they can be inspected, or used in the future.
-* adding more representative examples. 
+* adding more representative examples.
 
 Index
 ==================

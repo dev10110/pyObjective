@@ -20,7 +20,7 @@ class Variable:
 
         Returns
         -------
-        object: Variable
+        Variable
 
         """
         self.name = name
@@ -66,6 +66,7 @@ class Variable:
                 'Check for typos.')
 
 
+
 class Model:
 
     def __init__(self):
@@ -82,24 +83,30 @@ class Model:
     def add_var(self, var):
         """
         Adds a variable to the model. Also updates indices and variable lists.
+
         Parameters
         ----------
         var: Variable
             Variable to be added
+
         """
         var.index = self.N
         self.N += 1
         self.vars.append(var)
         self.bounds.append(var.bounds)
 
-    def solve(self, solveOptions={}):
+    def solve(self, objective=None, solveOptions={}):
         """
         Solves the model. Uses scipy's dual_annealing method to efficiently find global optimal.
         In the future, I will try to make it generic enough to use a solver of your choice.
 
         Parameters
         ----------
-        solveOptions: dict
+        objective: method, optional
+            Allows user to define the objective function when the solve method is called.
+            Replaces internal self.objective method.
+
+        solveOptions: dict, optional
             dictionary of all additional parameters that can be provided to scipy.optimize.dual_annealing()
 
         Returns
@@ -109,6 +116,9 @@ class Model:
             Also stores the solution within the model object (accessible by model.solution and model.solution_vector)
 
         """
+        if objective is not None:
+            self.objective = objective
+
         res = dual_annealing(self.evaluate, self.bounds, **solveOptions)
 
         for v in self.vars:
@@ -122,10 +132,11 @@ class Model:
     def evaluate(self, vec):
         """
         Evaluates the cost for the model for a given vector.
+
         Parameters
         ----------
-        vec: ndarray, list of floats
-            vector of variable values
+        vec: 1D array or list
+            list of floats, vector of variable values
 
         Returns
         -------

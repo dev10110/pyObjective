@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pyObjective",
-    version="0.0.1",
+    version="0.1.3",
     author="Devansh Agrawal",
     author_email="devanshinspace@gmail.com",
     description="A tool to allow optimization of complex objects using scipy.optimize",
