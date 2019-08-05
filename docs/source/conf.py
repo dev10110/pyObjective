@@ -15,7 +15,7 @@ import sys
 sys.path.insert(0, os.path.abspath('-e.'))
 sys.path.insert(0, os.path.abspath('-e../'))
 master_doc = 'index'
-
+autodoc-mock-imports = ['scipy, prettytable']
 # -- Project information -----------------------------------------------------
 
 project = 'pyObjective'
