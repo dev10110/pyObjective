@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('-e../'))
 sys.path.insert(0, os.path.abspath('-e../..'))
 sys.path.append('/Users/Devansh/PycharmProjects/pyObjective/pyObjective/pyObjective')
 master_doc = 'index'
-autodoc-mock-imports = ['scipy', 'prettytable']
+autodoc_mock_imports = ['scipy', 'prettytable']
 # -- Project information -----------------------------------------------------
 
 project = 'pyObjective'
