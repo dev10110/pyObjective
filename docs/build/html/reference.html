@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyObjective package &mdash; pyObjective 0.0.1 documentation</title>
+  <title>Module Reference &mdash; pyObjective 0.0.1 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="pyObjective" href="modules.html" /> 
+    <link rel="prev" title="Examples" href="examples.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,13 +82,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">pyObjective</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">pyObjective package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyObjective">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module Reference</a></li>
 </ul>
 
             
@@ -134,15 +128,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="modules.html">pyObjective</a> &raquo;</li>
-        
-      <li>pyObjective package</li>
+      <li>Module Reference</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/pyObjective.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/reference.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -155,42 +147,72 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="pyobjective-package">
-<h1>pyObjective package<a class="headerlink" href="#pyobjective-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-pyObjective">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyObjective" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="module-reference">
+<h1>Module Reference<a class="headerlink" href="#module-reference" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyObjective.Variable">
+<em class="property">class </em><code class="sig-prename descclassname">pyObjective.</code><code class="sig-name descname">Variable</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">value</em>, <em class="sig-param">bounds</em>, <em class="sig-param">description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyObjective.Variable" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="pyObjective.Variable.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">value</em>, <em class="sig-param">bounds</em>, <em class="sig-param">description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyObjective.Variable.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a variable</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name for the variable</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – numerical value of the variable. May be used as initial guess or to check model compilation.</p></li>
+<li><p><strong>bounds</strong> (<em>(</em><em>lower float</em><em>, </em><em>upper float</em><em>)</em>) – range of possible values</p></li>
+<li><p><strong>description</strong> (<em>str</em><em>, </em><em>optional</em>) – longer description of variable, for easy referencing in results.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>object</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pyObjective.Variable" title="pyObjective.Variable">Variable</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyObjective.Variable.__call__">
+<code class="sig-name descname">__call__</code><span class="sig-paren">(</span><em class="sig-param">vec=[]</em>, <em class="sig-param">mode=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyObjective.Variable.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an appropriate form of the variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vec</strong> (<em>1D array</em><em> or </em><em>list</em>) – vector to substitute into variables</p></li>
+<li><p><strong>mode</strong> – type of return on calling the variable.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>If mode is ‘float’ or ‘value’, the variables value is returned (float).
+If mode is ‘index’, the index of this variable within the vector is returned (int).
+If mode is ‘obj’, the returned style is such that it can be used by scipy’s optimize features (vec[int])</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="class">
 <dt id="pyObjective.Model">
 <em class="property">class </em><code class="sig-prename descclassname">pyObjective.</code><code class="sig-name descname">Model</code><a class="headerlink" href="#pyObjective.Model" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><dl class="method">
+<dt id="pyObjective.Model.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyObjective.Model.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the model.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="pyObjective.Model.add_var">
 <code class="sig-name descname">add_var</code><span class="sig-paren">(</span><em class="sig-param">var</em><span class="sig-paren">)</span><a class="headerlink" href="#pyObjective.Model.add_var" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a variable to the model. Also updates indices and variable lists.
 :param var: Variable to be added
 :type var: Variable</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="pyObjective.Model.display_results">
-<code class="sig-name descname">display_results</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyObjective.Model.display_results" title="Permalink to this definition">¶</a></dt>
-<dd><p>Simple method to display the cost and the variables neatly.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="pyObjective.Model.evaluate">
-<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param">vec</em><span class="sig-paren">)</span><a class="headerlink" href="#pyObjective.Model.evaluate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluates the cost for the model for a given vector.
-:param vec: vector of variable values
-:type vec: ndarray, list of floats</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>cost evaluated for this vector</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="method">
@@ -212,15 +234,30 @@ Also stores the solution within the model object (accessible by model.solution a
 </dl>
 </dd></dl>
 
+<dl class="method">
+<dt id="pyObjective.Model.evaluate">
+<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param">vec</em><span class="sig-paren">)</span><a class="headerlink" href="#pyObjective.Model.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates the cost for the model for a given vector.
+:param vec: vector of variable values
+:type vec: ndarray, list of floats</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>cost evaluated for this vector</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="class">
-<dt id="pyObjective.Variable">
-<em class="property">class </em><code class="sig-prename descclassname">pyObjective.</code><code class="sig-name descname">Variable</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">value</em>, <em class="sig-param">bounds</em>, <em class="sig-param">description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyObjective.Variable" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="pyObjective.Model.display_results">
+<code class="sig-name descname">display_results</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyObjective.Model.display_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple method to display the cost and the variables neatly.</p>
 </dd></dl>
 
-</div>
+</dd></dl>
+
 </div>
 
 
@@ -232,7 +269,7 @@ Also stores the solution within the model object (accessible by model.solution a
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="modules.html" class="btn btn-neutral float-left" title="pyObjective" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="examples.html" class="btn btn-neutral float-left" title="Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

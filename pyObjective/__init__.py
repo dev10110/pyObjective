@@ -20,7 +20,7 @@ class Variable:
 
         Returns
         -------
-        object: Variable
+        Variable
 
         """
         self.name = name
@@ -83,10 +83,12 @@ class Model:
     def add_var(self, var):
         """
         Adds a variable to the model. Also updates indices and variable lists.
+
         Parameters
         ----------
         var: Variable
             Variable to be added
+
         """
         var.index = self.N
         self.N += 1
@@ -130,10 +132,11 @@ class Model:
     def evaluate(self, vec):
         """
         Evaluates the cost for the model for a given vector.
+
         Parameters
         ----------
-        vec: ndarray, list of floats
-            vector of variable values
+        vec: 1D array or list
+            list of floats, vector of variable values
 
         Returns
         -------

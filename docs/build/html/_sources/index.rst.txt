@@ -8,14 +8,13 @@ pyObjective!
 
 pyObjective is a python package to complement scipy's optimize toolbox.
 
-.. automodule:: pyObjective
-   :members:
+
 
 .. toctree::
    :maxdepth: 2
 
    examples
-   modules
+   reference
 
 
 
@@ -53,11 +52,18 @@ This method is effective for problems which have many local minima, but is funda
 Look at the examples to see examples of how to use the package.
 
 
+Future Developments
+====================
 
+The next few steps include:
 
-Indices and tables
+* adding linear and non-linear constraints
+* support for units
+* create model instances with variables fully defined, so they can be inspected, or used in the future.
+* adding more representative examples. 
+
+Index
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
